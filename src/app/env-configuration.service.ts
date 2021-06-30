@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import {  tap} from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { Configuration } from "./configuration.interface";
 
 
@@ -21,7 +22,7 @@ export class EnvConfigurationService {
    */
   public load(): Observable<Configuration> {
       return this.http
-        .get<Configuration>(`${this.apiUrl}/config.json`)
+        .get<Configuration>(`${this.apiUrl}/${environment.configFileName}`)
         .pipe(
           tap( data => this.configuration$.next(data))
         )

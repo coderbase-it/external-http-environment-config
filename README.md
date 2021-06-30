@@ -11,3 +11,6 @@
 # fake api : json-server api/db.json -p 4300
 # change config/config.json with apiUrl : http://localhost:4300
 # reload webpage and data are coming from this api.
+
+# informations about solutions that exist : 
+## https://www.mokkapps.de/blog/how-to-build-an-angular-app-once-and-deploy-it-to-multiple-environments
