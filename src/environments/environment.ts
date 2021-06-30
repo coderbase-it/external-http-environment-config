@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  configFileName: 'config.dev.json'
+  configFileName: 'config.dev.json',
+  appVersion: require('../../package.json').version + '-dev',
 };
 
 /*
