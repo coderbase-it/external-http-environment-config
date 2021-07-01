@@ -10,7 +10,7 @@ import { Configuration } from "./configuration.interface";
 
 @Injectable({ providedIn: 'root' })
 export class EnvConfigurationService {
-  private readonly apiUrl = 'http://127.0.0.1:3000';
+  //private readonly apiUrl = 'http://127.0.0.1:3000';
   public configuration$:  BehaviorSubject<Configuration> = new BehaviorSubject({});
 
   constructor(private http: HttpClient) {}
@@ -22,7 +22,7 @@ export class EnvConfigurationService {
    */
   public load(): Observable<Configuration> {
       return this.http
-        .get<Configuration>(`${this.apiUrl}/${environment.configFileName}`)
+        .get<Configuration>(`./assets/config.json`)
         .pipe(
           tap( data => this.configuration$.next(data))
         )
